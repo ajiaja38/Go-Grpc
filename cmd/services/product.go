@@ -47,7 +47,7 @@ func (p *ProductService) GetProducts(ctx context.Context, pageParam *productPb.P
 		var category productPb.Category
 
 		if err := rows.Scan(&product.Id, &product.Name, &product.Price, &product.Stock, &category.Id, &category.Name); err != nil {
-			log.Fatalf("Failed to scan row: %v", err.Error())
+			log.Fatalf("Failed to scan data: %v", err.Error())
 		}
 
 		product.Category = &category
